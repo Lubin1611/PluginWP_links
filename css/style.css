@@ -1,0 +1,42 @@
+#titrePlugin {
+    background-color: orange;
+    color: black;
+    padding: 2%;
+}
+
+
+
+#infos_plugin > div {
+
+    border: 1px solid black;
+    width: 200px;
+    height: 500px;
+
+}
+
+#infos_plugin {
+
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+td{
+
+    padding: 2%;
+    border-bottom : 1px solid grey;
+    text-align: center;
+}
+
+tr {
+
+    text-align: center;
+
+}
+
+table > tr {
+
+    border-bottom : 1px solid grey;
+
+}
