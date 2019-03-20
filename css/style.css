@@ -1,18 +1,42 @@
+body {
+
+    font-size: 0.8vw;
+
+}
+
+@font-face {
+    font-family: importLobster;
+    src: url("../ressources /RomanSerif.ttf");
+}
+
+
 #titrePlugin {
-    background-color: orange;
-    color: black;
+    background-image: linear-gradient(to right, #40E0D0 0%, #39c6ca 100%);
+    color: white;
     padding: 2%;
+    font-family: importLobster;
+    font-size: 1.7vw;
+    margin-bottom: 3%;
 }
 
 
+#description_plugin_links {
 
-#infos_plugin > div {
+    border: 2px ridge black;
+    text-align: center;
+    padding: 1%;
+    margin-top: 2%;
+    margin-bottom: 3%;
 
-    border: 1px solid black;
-    width: 200px;
-    height: 500px;
 
 }
+
+#queryButton {
+
+    width: 100px;
+    height: 40px;
+}
+
 
 #infos_plugin {
 
@@ -22,10 +46,10 @@
 
 }
 
-td{
+
+td, th {
 
     padding: 2%;
-    border-bottom : 1px solid grey;
     text-align: center;
 }
 
@@ -33,10 +57,17 @@ tr {
 
     text-align: center;
 
+
 }
 
-table > tr {
+table {
 
-    border-bottom : 1px solid grey;
+    width: 100%;
 
+}
+
+td > div {
+
+    margin-bottom: 1%;
+    text-decoration: underline;
 }
