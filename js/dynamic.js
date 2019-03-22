@@ -1,5 +1,3 @@
-alert("haaaaaaaaaaa");
-
 function my_action_javascript() {
 
     jQuery(document).ready(function ($) {
@@ -59,12 +57,16 @@ function my_action_javascript() {
 
             var sixthHead = document.createElement('th');
             sixthHead.innerHTML = "date de fin";
-
-
             firstrow.appendChild(sixthHead);
 
+            var sevenHead = document.createElement('th');
+            var sevenHeadTxt = document.createTextNode("Heure de fin");
+            sevenHead.appendChild(sevenHeadTxt);
+            firstrow.appendChild(sevenHead);
+
             var lastHead = document.createElement('th');
-            var lastHeadTxt = document.createTextNode("Heure de fin");
+            lastHead.style.width = "150px";
+            var lastHeadTxt = document.createTextNode("Description");
             lastHead.appendChild(lastHeadTxt);
             firstrow.appendChild(lastHead);
 
@@ -119,6 +121,7 @@ function my_action_javascript() {
 
                         var txt4 = document.createTextNode("Date n° " + (pas + 1) + "  -  " + obj.data.poi.results[index].takesPlaceAt[pas].startDate );
                         div = document.createElement("div");
+                        div.style.borderBottom = "1px black solid";
                         div.appendChild(txt4);
                         td4.appendChild(div);
 
@@ -144,6 +147,7 @@ function my_action_javascript() {
 
                         var txt5 = document.createTextNode("Heure de début n° " + (pas2 + 1) + " - " + obj.data.poi.results[index].takesPlaceAt[pas2].startTime );
                         div2 = document.createElement("div");
+                        div2.style.borderBottom = "1px black solid";
                         div2.appendChild(txt5);
                         td5.appendChild(div2);
 
@@ -170,6 +174,7 @@ function my_action_javascript() {
 
                         var txt6 = document.createTextNode("Date de fin n° " + (pas3 + 1) + " - " +  obj.data.poi.results[index].takesPlaceAt[pas3].endDate);
                         div3 = document.createElement("div");
+                        div3.style.borderBottom = "1px black solid";
                         div3.appendChild(txt6);
                         td6.appendChild(div3);
 
@@ -194,6 +199,7 @@ function my_action_javascript() {
 
                         var txt7 = document.createTextNode("Heure de fin n° " + (pas4 + 1) + " - " +  obj.data.poi.results[index].takesPlaceAt[pas4].endTime );
                         div4 = document.createElement("div");
+                        div4.style.borderBottom = "1px black solid";
                         div4.appendChild(txt7);
                         td7.appendChild(div4);
 
@@ -208,6 +214,14 @@ function my_action_javascript() {
 
                 tr.appendChild(td7);
 
+
+
+                td8 = document.createElement("td");
+                td8.style.width = "150px";
+
+                txt8 = document.createTextNode(obj.data.poi.results[index].hasDescription[0].dc_description);
+                td8.appendChild(txt8);
+                tr.appendChild(td8);
 
                 if (index % 2 == 0) {
 

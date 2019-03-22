@@ -40,7 +40,7 @@ function my_styles() {
         return;
 
     }  else {
-        wp_register_style('custom_wp_admin_css', plugins_url('/Links_Plugin/css/style.css'));
+        wp_register_style('custom_wp_admin_css', plugins_url('/PluginWP_links/css/style.css'));
         wp_enqueue_style('custom_wp_admin_css');
     }
 }
@@ -154,7 +154,7 @@ function my_scripts() {
     }  else {
 
         wp_enqueue_script('jquery');
-        wp_register_script('my_script', plugins_url('../Links_Plugin/js/dynamic.js', __FILE__));
+        wp_register_script('my_script', plugins_url('../PluginWP_links/js/dynamic.js', __FILE__));
         wp_enqueue_script('my_script');
 
     }
@@ -210,6 +210,7 @@ function my_action()
 
 
 // composer autoload
+
     require __DIR__ . '/vendor/autoload.php';
 
 // instanciation du client
@@ -220,14 +221,11 @@ function my_action()
 
     $result = $api->process('{
     poi (
-
      size: 100,          # <- Limite le nombre de résultats par page
      from: 0,
-
       sort:[
             { takesPlaceAt : { startDate : { order: desc } } }  # <- Tri des évenements par date de début
         ]
-
     )
     {
     total
@@ -247,9 +245,11 @@ function my_action()
       endDate
       endTime
       }
+      hasDescription {
+        dc_description
+        }
     }
   }
-
 }');
 
 
